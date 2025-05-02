@@ -8,19 +8,10 @@
             <div class="row my-3">
 
                 <div class="col">
-                    <h3>Datos del Cliente</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">{{invoice.client.name}} {{invoice.client.lastname}}</li>
-                        <li class="list-group-item">{{invoice.client.address.country}} / {{invoice.client.address.city}}</li>
-                        <li class="list-group-item">{{invoice.client.address.street}} {{invoice.client.address.number}}</li>
-                    </ul>
+                    <client-view [client]="invoice.client"></client-view>
                 </div>
                 <div class="col">
-                    <h3>Datos de la Empresa</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">{{invoice.company.name}}</li>
-                        <li class="list-group-item">{{invoice.company.fiscalNumber}}</li>
-                    </ul>
+                    <company-view [company]="invoice.company"></company-view>
                 </div>
             </div>
             <div>
