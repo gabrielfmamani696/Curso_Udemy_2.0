@@ -9,5 +9,6 @@ import { Company } from '../../models/company';
 })
 export class CompanyViewComponent {
 
-  @Input() company: Company = new Company();
+  // @Input() company: Company = new Company();
+  @Input() company: Company = {name: '', fiscalNumber: 0};
 }
