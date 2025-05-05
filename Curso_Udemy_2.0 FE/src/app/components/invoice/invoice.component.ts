@@ -7,30 +7,37 @@ import { ListItemsComponent } from '../list-items/list-items.component';
 import { CommonModule } from '@angular/common';
 import { TotalComponent } from '../total/total.component';
 import { Item } from '../../models/item';
+import { FormItemComponent } from '../form-item/form-item.component';
 
 @Component({
   selector: 'app-invoice',
   standalone: true,
-  imports: [InvoiceViewComponent, 
+  imports: [
+    InvoiceViewComponent, 
     ClientViewComponent, 
     CompanyViewComponent, 
     ListItemsComponent, 
     CommonModule,
-    TotalComponent],
+    TotalComponent,
+    FormItemComponent],
   templateUrl: './invoice.component.html',
 })
 export class InvoiceComponent implements OnInit {
   invoice!: Invoice;
-  constructor(private service: InvoiceService) {
 
+  constructor(private invoiceService: InvoiceService) {
   }
 
   ngOnInit(): void {
-    this.invoice = this.service.getInvoice();
+    this.invoice = this.invoiceService.getInvoice();
   }
 
   removeItem(id: number) {
-    this.invoice = this.service.removeItem(id);
+    this.invoice = this.invoiceService.removeItem(id);
+  }
+
+  addItem(item: Item) {
+    this.invoice = this.invoiceService.saveItem(item);
   }
   
 }

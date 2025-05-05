@@ -34,9 +34,21 @@ export class InvoiceService {
   }
 
   removeItem(id: number): Invoice{
+    // modificamos el array de items
     this.invoice.items = this.invoice.items.filter(item => item.id != id);
+    //recalculamos
     const total = this.calculatetotal();
-
+    //clonamos
     return {... this.invoice, total};
+  }
+
+  saveItem(item: Item): Invoice{
+    //agregar item
+    this.invoice.items = [...this.invoice.items, item]
+    //recalculamos
+    const total = this.calculatetotal();
+    //clonamos 
+    return {... this.invoice, total};
+
   }
 }
