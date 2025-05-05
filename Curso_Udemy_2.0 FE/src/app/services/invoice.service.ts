@@ -27,12 +27,16 @@ export class InvoiceService {
     //forma 2
 
     // return this.invoice.items.reduce((total, itemi)=>total + itemi.total(), 0)
-
     
     let total = 0;
     this.invoice.items.forEach(item => total += (item.price * item.quantity));
     return total;
+  }
 
-    
+  removeItem(id: number): Invoice{
+    this.invoice.items = this.invoice.items.filter(item => item.id != id);
+    const total = this.calculatetotal();
+
+    return {... this.invoice, total};
   }
 }
