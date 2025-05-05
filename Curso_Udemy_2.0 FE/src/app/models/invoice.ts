@@ -8,5 +8,5 @@ export class Invoice {
     client!: Client;
     company!: Company;
     items!: Item[];// este atributo sera de tipo arrgeglo
-
+    total!: number;
 }

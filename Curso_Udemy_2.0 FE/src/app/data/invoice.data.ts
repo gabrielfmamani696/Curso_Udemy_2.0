@@ -23,7 +23,7 @@ export const invoiceData: Invoice = {
             id: 1,
             product: 'Cpu Intel i9',
             price: 599,
-            quantity: 1
+            quantity: 1,
         },
         {
             id: 2,
@@ -37,5 +37,6 @@ export const invoiceData: Invoice = {
             price: 899,
             quantity: 3
         },
-    ]
+    ],
+    total: 4024 // este ato deberia venir calculado del BE, me parece
 }
