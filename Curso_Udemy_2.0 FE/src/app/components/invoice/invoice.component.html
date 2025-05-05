@@ -17,7 +17,7 @@
       </div>
       
       
-      <list-items [items]="invoice.items"/>
+      <list-items-comp [items]="invoice.items" (removeEventEmmitter)="removeItem($event)"/>
       <total [total]="invoice.total"/>
     </div>
 

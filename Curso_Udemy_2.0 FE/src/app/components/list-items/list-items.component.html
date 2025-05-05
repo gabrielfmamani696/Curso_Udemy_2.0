@@ -11,12 +11,14 @@
             <th>product</th>
             <th>price</th>
             <th>quantity</th>
+            <th>remove</th>
         </tr>
     </thead>
     <tbody>
         @for (itemInstance of items; track $index) {
             <!-- [atributo del hijo ]= "atributo del padre"-->
-            <tr row-item [item]="itemInstance"></tr>
+            <tr row-item [item]="itemInstance" (removeEventEmitter)="onRemove($event)"></tr>
+            <!-- <tr row-item [item]="itemInstance" (<atributo del hijo>)="<f. del padre>"></tr> -->
             <!-- <row-item [item]="itemInstance"></row-item> -->
         }
     </tbody>

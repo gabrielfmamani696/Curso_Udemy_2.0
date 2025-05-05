@@ -38,5 +38,5 @@ export const invoiceData: Invoice = {
             quantity: 3
         },
     ],
-    total: 4024 // este ato deberia venir calculado del BE, me parece
+    total: 4024 // este dato deberia venir calculado del BE, me parece
 }
