@@ -2,14 +2,17 @@ import { Injectable } from '@angular/core';
 import { Invoice } from '../models/invoice';
 import { invoiceData } from '../data/invoice.data';
 import { Item } from '../models/item';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvoiceService {
+  path = 'http://localhost:5000/calcular-media';
   private invoice: Invoice = invoiceData;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getInvoice(): Invoice{
     const total = this.calculatetotal();
@@ -50,5 +53,9 @@ export class InvoiceService {
     //clonamos 
     return {... this.invoice, total};
 
+  }
+
+  public calcMean(formData: FormData):Observable<any>  {
+    return this.httpClient.post<any>(this.path, formData);
   }
 }

@@ -21,6 +21,17 @@
       <total [total]="invoice.total"/>
       <form-item-comp (addItemEventEmitter)="addItem($event)"/>
       <!-- <tr row-item [item]="itemInstance" (<atributo del hijo>)="<f. del padre>"></tr> -->
+
+      <div class="my-3">
+        <h5>Calcular media desde CSV</h5>
+        <input type="file" (change)="onFileSelected($event)" accept=".csv" />
+        <button class="btn btn-primary mt-2" (click)="uploadFile()" [disabled]="!selectedFile">Calcular Media</button>
+        <div *ngIf="media !== null" class="mt-2">
+          <p><strong>Media:</strong> {{ media }}</p>
+        </div>
+      </div>
+
+          
     </div>
 
   </div>
