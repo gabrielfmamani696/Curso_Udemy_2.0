@@ -1,0 +1,17 @@
+<!-- <button type="button" class="btn btn-primary my-3" (click)="habilitar=!habilitar">Ocultar</button> -->
+<!-- <button type="button" class="btn btn-primary my-3" (click)="habilitar= (habilitar==true)? false:true">{{habilitar==true? 'Ocultar':'Mostrar'}}</button> -->
+ <button type="button" class="btn btn-primary my-3" (click)=setHabilitar()>{{habilitar==true? 'Ocultar':'Mostrar'}}</button>
+<div class="card">
+  <div class="card-header">
+    Listado de cursos
+  </div>
+  @if (habilitar == true) {
+    <ul class="list-group">
+      @for (item of listaCurso; track $index) {
+        <li class="list-group-item">
+          {{item}}
+        </li>
+      }
+    </ul>
+  }
+</div>
