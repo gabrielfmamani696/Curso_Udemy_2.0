@@ -14,6 +14,8 @@ export class UserComponent {
   @Output() idUserEventEmitter = new EventEmitter();
 
   @Output() selectdUserEventEmitter = new EventEmitter();
+  
+  title: string = 'Listado de usuarios Carpeta 08!';
 
   onRemoveUser(id: number): void {
     this.idUserEventEmitter.emit(id);   
