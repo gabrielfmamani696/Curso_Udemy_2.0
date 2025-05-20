@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./user-app.component.css']
 })
 export class UserAppComponent implements OnInit {
-  title: string = 'Listado de usuarios!';
+  title: string = 'Listado de usuarios Carpeta 08!';
 
   users: User[] = [];
 
