@@ -21,3 +21,6 @@ npx -p @angular/cli@18.2.3 ng serve
 
 #generar la carpeta de componentes
 npx -p @angular/cli@18.2.3 ng g c componentsinvoice
+
+#generar una clase de componentes
+npx -p @angular/cli@18.2.3 ng g class models/objeto
