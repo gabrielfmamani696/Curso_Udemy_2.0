@@ -12,7 +12,7 @@ export class UserFormComponent {
 
   @Input() user: User;
 
-  @Output() openEventEmitter = new EventEmitter();
+  
 
   @Output() newUserEventEmitter: EventEmitter<User> = new EventEmitter();
 
@@ -35,8 +35,4 @@ export class UserFormComponent {
     userForm.resetForm();
   }
 
-  onOpenClose() {
-    //pulsacion
-    this.openEventEmitter.emit();
-  }
 }
