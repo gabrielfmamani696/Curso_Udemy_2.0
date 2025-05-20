@@ -78,6 +78,7 @@ export class UserAppComponent implements OnInit {
   setOpen() {
     
     this.userSelected = new User(); //limpiamos this.userSelected despues de cerrar el modal con la pulsacion 
+    console.log("hola")
     this.open = !this.open;
   }
 }
